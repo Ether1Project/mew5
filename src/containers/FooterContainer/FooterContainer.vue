@@ -49,7 +49,7 @@
             <div class="links">
               <p>{{ $t('footer.welcomeDes') }}</p>
               <p class="crypto-link">
-                &nbsp;Ethereum / Xerom
+                &nbsp;Ethereum / ETHO
                 0xB69B9216B5089Dc3881A4E38f691e9B6943DFA11
               </p>
 
