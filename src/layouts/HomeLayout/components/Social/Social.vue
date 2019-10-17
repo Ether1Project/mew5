@@ -39,7 +39,7 @@ export default {
       links: [
         {
           img: twitter,
-          to: 'https://twitter.com/XeromOfficial',
+          to: 'https://twitter.com/Ether1Official',
           name: 'Twitter'
         },
         {
@@ -49,7 +49,7 @@ export default {
         },
         {
           img: github,
-          to: 'https://github.com/xero-official',
+          to: 'https://github.com/Ether1Project',
           name: 'github'
         }
       ]

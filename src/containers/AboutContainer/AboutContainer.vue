@@ -13,11 +13,7 @@
                 <p class="color-white">{{ $t('home.aboutSubheading') }}</p>
               </div>
               <div class="image-content">
-                <img
-                  alt="mew-icon"
-                  class="mew-icon"
-                  src="~@/assets/images/home/mew-icon.png"
-                />
+
               </div>
               <div class="animation-content">
                 <img

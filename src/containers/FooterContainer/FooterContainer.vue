@@ -155,18 +155,18 @@ export default {
           contents: [
             {
               text: this.$t('common.customerSupport'),
-              href: 'mailto:admin@xerom.org'
+              href: 'mailto:ethan@ether1.org'
             }
           ]
         }
       ],
       links: [
         {
-          to: 'https://twitter.com/XeromOfficial',
+          to: 'https://twitter.com/Ether1Official',
           class: 'fa-twitter'
         },
         {
-          to: 'https://github.com/xero-official',
+          to: 'https://github.com/Ether1Project',
           class: 'fa-github'
         },
         {

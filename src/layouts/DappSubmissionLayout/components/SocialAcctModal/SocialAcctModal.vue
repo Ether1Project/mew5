@@ -51,7 +51,6 @@
 <script>
 import github from '@/assets/images/icons/github.png';
 import twitter from '@/assets/images/icons/twitter.jpg';
-import facebook from '@/assets/images/icons/facebook.png';
 import reddit from '@/assets/images/icons/reddit.svg';
 import medium from '@/assets/images/icons/medium.png';
 import linkedIn from '@/assets/images/icons/linkedin.svg';
@@ -66,7 +65,6 @@ export default {
           value: github,
           text: 'Github'
         },
-        { value: facebook, text: 'Facebook' },
         { value: twitter, text: 'Twitter' },
         { value: reddit, text: 'Reddit' },
         { value: medium, text: 'Medium' },
