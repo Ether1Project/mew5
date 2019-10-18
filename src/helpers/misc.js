@@ -141,10 +141,6 @@ const reorderNetworks = () => {
   return newObject;
 };
 
-function hide(id) {
-  document.getElementByClass(eth).style.display = "none";
-}
-
 const solidityType = inputType => {
   if (!inputType) inputType = '';
   if (inputType.includes('[') && inputType.includes(']')) {
