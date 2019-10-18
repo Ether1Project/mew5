@@ -6,7 +6,7 @@ import secureTransactionHov from '@/assets/images/icons/button-key.svg';
 import scheduleTransaction from '@/assets/images/icons/eac.svg';
 import scheduleTransactionHov from '@/assets/images/icons/eac-hov.svg';
 import makerdai from '@/assets/images/icons/dapps/makerdai.svg';
-import { ETH, GOERLI, ROP, RIN, KOV } from '@/networks/types';
+import { ETH, GOERLI, ROP, RIN, KOV, ETHO } from '@/networks/types';
 
 const dapps = {
   manageEns: {
@@ -15,7 +15,7 @@ const dapps = {
     iconDisabled: manageEnsHov,
     title: 'interface.ensManager',
     desc: 'interface.registerENSDescShort',
-    supportedNetworks: [ETH.name, GOERLI.name, ROP.name, RIN.name]
+    supportedNetworks: [ETH.name, GOERLI.name, ROP.name, RIN.name, ETHO.name]
   },
   domainSale: {
     route: '/interface/dapps/name-wallet',
@@ -23,7 +23,7 @@ const dapps = {
     iconDisabled: domainSaleHov,
     title: 'interface.nameYourWallet',
     desc: 'interface.nameYourWalletDesc',
-    supportedNetworks: [ETH.name]
+    supportedNetworks: [ETH.name, ETHO.name]
   },
   scheduleTransaction: {
     route: '/interface/dapps/schedule-transaction',

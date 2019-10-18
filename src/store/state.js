@@ -6,7 +6,7 @@ if (store.get('notifications') === undefined) store.set('notifications', {});
 const gettingStartedDone =
   store.get('skipTutorial') !== undefined ? store.get('skipTutorial') : false;
 const storedNetwork = store.get('network');
-let network = nodeList['XERO'][0];
+let network = nodeList['ETHO'][0];
 
 if (storedNetwork !== undefined) {
   network = storedNetwork;
