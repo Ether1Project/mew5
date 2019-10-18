@@ -72,6 +72,7 @@
                   alt
                   class="logo-large"
                   src="~@/assets/images/short-hand-logo.png"
+                  style="-webkit-filter: invert(50%);filter: invert(50%);"
                 />
               </div>
             </router-link>

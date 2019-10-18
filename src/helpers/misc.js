@@ -1,10 +1,18 @@
 import normalise from '@/helpers/normalise';
 import nodeList from '@/networks';
-import { isAddress } from './addressUtils';
+import {
+  isAddress
+} from './addressUtils';
 import url from 'url';
 import utils from 'web3-utils';
 import store from '@/store';
-import { uint, address, string, bytes, bool } from './solidityTypes';
+import {
+  uint,
+  address,
+  string,
+  bytes,
+  bool
+} from './solidityTypes';
 import xss from 'xss';
 
 const capitalize = value => {
@@ -106,67 +114,108 @@ const scrollToTop = scrollDuration => {
 const validateHexString = str => {
   if (str === '') return true;
   str =
-    str.substring(0, 2) === '0x'
-      ? str.substring(2).toUpperCase()
-      : str.toUpperCase();
+    str.substring(0, 2) === '0x' ?
+    str.substring(2).toUpperCase() :
+    str.toUpperCase();
   return utils.isHex(str);
 };
 
 const reorderNetworks = () => {
   const oldObject = Object.assign({}, nodeList);
+  delete oldObject['ETHO'];
+  delete oldObject['XERO'];
   delete oldObject['ETH'];
   delete oldObject['RIN'];
   delete oldObject['ROP'];
-  const newObject = Object.assign(
-    {},
-    {
-      ETH: nodeList['ETH'],
-      ROP: nodeList['ROP'],
-      RIN: nodeList['RIN'],
-      ...oldObject
-    }
-  );
+  const newObject = Object.assign({}, {
+    ETHO: nodeList['ETHO'],
+    XERO: nodeList['XERO'],
+    ETH: nodeList['ETH'],
+    ROP: nodeList['ROP'],
+    RIN: nodeList['RIN'],
+    ...oldObject
+  });
   for (const net in newObject) {
     if (newObject[net].length === 0) delete newObject[net];
   }
   return newObject;
 };
 
+function hide(id) {
+  document.getElementByClass(eth).style.display = "none";
+}
+
 const solidityType = inputType => {
   if (!inputType) inputType = '';
   if (inputType.includes('[') && inputType.includes(']')) {
     if (inputType.includes(uint))
-      return { type: 'string', solidityType: `${uint}[]` };
+      return {
+        type: 'string',
+        solidityType: `${uint}[]`
+      };
     if (inputType.includes(address))
-      return { type: 'text', solidityType: `${address}[]` };
+      return {
+        type: 'text',
+        solidityType: `${address}[]`
+      };
     if (inputType.includes(string))
-      return { type: 'text', solidityType: `${string}[]` };
+      return {
+        type: 'text',
+        solidityType: `${string}[]`
+      };
     if (inputType.includes(bytes))
-      return { type: 'text', solidityType: `${bytes}[]` };
+      return {
+        type: 'text',
+        solidityType: `${bytes}[]`
+      };
     if (inputType.includes(bool))
-      return { type: 'string', solidityType: `${bool}[]` };
-    return { type: 'text', solidityType: `${string}[]` };
+      return {
+        type: 'string',
+        solidityType: `${bool}[]`
+      };
+    return {
+      type: 'text',
+      solidityType: `${string}[]`
+    };
   }
-  if (inputType.includes(uint)) return { type: 'number', solidityType: uint };
+  if (inputType.includes(uint)) return {
+    type: 'number',
+    solidityType: uint
+  };
   if (inputType.includes(address))
-    return { type: 'text', solidityType: address };
-  if (inputType.includes(string)) return { type: 'text', solidityType: string };
-  if (inputType.includes(bytes)) return { type: 'text', solidityType: bytes };
-  if (inputType.includes(bool)) return { type: 'radio', solidityType: bool };
-  return { type: 'text', solidityType: string };
+    return {
+      type: 'text',
+      solidityType: address
+    };
+  if (inputType.includes(string)) return {
+    type: 'text',
+    solidityType: string
+  };
+  if (inputType.includes(bytes)) return {
+    type: 'text',
+    solidityType: bytes
+  };
+  if (inputType.includes(bool)) return {
+    type: 'radio',
+    solidityType: bool
+  };
+  return {
+    type: 'text',
+    solidityType: string
+  };
 };
 
 const isDarklisted = addr => {
   const storedDarklist = store.state.darklist.data;
   const darklisted =
-    storedDarklist > 0
-      ? storedDarklist.findIndex(item => {
-          return (
-            utils.toChecksumAddress(item.address.toLowerCase()) ===
-            utils.toChecksumAddress(addr.toLowerCase())
-          );
-        })
-      : -1;
+    storedDarklist > 0 ?
+    storedDarklist.findIndex(item => {
+      return (
+        utils.toChecksumAddress(item.address.toLowerCase()) ===
+        utils.toChecksumAddress(addr.toLowerCase())
+      );
+    }) :
+    -1;
   const errMsg =
     darklisted === -1 ? '' : store.state.darklist.data[darklisted].comment;
   const errObject = {

@@ -1,3 +1,4 @@
+import ETHO from './ETHO.js';
 import AKA from './AKA.js';
 import ATH from './ATH.js';
 import CLO from './CLO.js';
@@ -6,7 +7,6 @@ import ELLA from './ELLA.js';
 import ESN from './ESN.js';
 import ETC from './ETC.js';
 import ETH from './ETH.js';
-import ETHO from './ETHO.js';
 import EXP from './EXP.js';
 import GOERLI from './GOERLI.js';
 import GO from './GO.js';
@@ -32,6 +32,7 @@ import PHT from './PHT.js';
 import XERO from './XERO.js';
 
 export {
+  ETHO,
   AKA,
   ATH,
   CLO,
@@ -40,7 +41,6 @@ export {
   ESN,
   ETC,
   ETH,
-  ETHO,
   EXP,
   GOERLI,
   GO,

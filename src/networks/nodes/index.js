@@ -1,3 +1,4 @@
+import etho from './etho';
 import akaremote from './aka-remote';
 import ath from './ath';
 import clo from './clo';
@@ -15,7 +16,6 @@ import ethinfuraws from './eth-infura-ws';
 import ethpocket from './eth-pocket';
 import ethmew from './eth-mew';
 import ethmewws from './eth-mew-ws';
-import etho from './etho';
 import go from './go';
 import kovethscan from './kov-ethscan';
 import kovinfura from './kov-infura';
@@ -52,6 +52,7 @@ import pht from './pht';
 import xero from './xero';
 
 export {
+  etho,
   akaremote,
   ath,
   clo,
@@ -69,7 +70,6 @@ export {
   ethpocket,
   ethmew,
   ethmewws,
-  etho,
   exp,
   goerli,
   goerlipocket,
